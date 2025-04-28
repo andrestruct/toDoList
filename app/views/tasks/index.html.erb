@@ -11,6 +11,15 @@
     <h1 class="font-bold text-4xl text-center ">Tarefas</h1>
   </div>
 
+
+  <!-- BOTÕES DE FILTRO -->
+  <div class="flex flex-wrap justify-center space-x-4 my-8">
+    <%= link_to "Todas", tasks_path, class: "rounded-md px-4 py-2 bg-gray-300 hover:bg-gray-400 text-gray-800 font-medium"%>
+    <%= link_to "Pendentes", tasks_path(filter: "pending"), class: "rounded-md px-4 py-2 bg-yellow-400 hover:bg-yellow-500 text-white font-medium" %> 
+    <%= link_to "Concluídas", tasks_path(filter: "completed"), class: "rounded-md px-4 py-2 bg-green-400 hover:bg-green-500 text-white font-medium" %>
+  </div>
+  
+
 <!-- LISTAGEM DAS TAREFAS-->
   <div id="tasks" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     <% if @tasks.any? %>
